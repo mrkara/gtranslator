@@ -123,7 +123,7 @@ static const GtkActionEntry always_sensitive_entries[] = {
   {"Documents", NULL, N_("_Documents")},
 
   /* File menu */
-  {"FileOpen", GTK_STOCK_OPEN, NULL, "<control>O",
+  {"FileOpen", "document-open", N_("_Open"), "<control>O",
    N_("Open a PO file"),
    G_CALLBACK (gtr_open_file_dialog)},
   {"FileRecentFiles", NULL, N_("_Recent Files"), NULL,
@@ -132,7 +132,7 @@ static const GtkActionEntry always_sensitive_entries[] = {
   /* Edit menu */
   {"EditToolbar", NULL, N_("T_oolbar"), NULL, NULL,
    G_CALLBACK (gtr_window_cmd_edit_toolbar)},
-  {"EditHeader", GTK_STOCK_PROPERTIES, N_("_Header..."), NULL, NULL,
+	  {"EditHeader", "document-properties", N_("_Header..."), NULL, NULL,
    G_CALLBACK (gtr_actions_edit_header)},
 };
 
@@ -140,39 +140,40 @@ static const GtkActionEntry always_sensitive_entries[] = {
 static const GtkActionEntry entries[] = {
 
   /* File menu */
-  {"FileSave", GTK_STOCK_SAVE, NULL, "<control>S",
+  {"FileSave", "document-save", N_("_Save"), "<control>S",
    N_("Save the current file"),
    G_CALLBACK (gtr_save_current_file_dialog)},
-  {"FileSaveAs", GTK_STOCK_SAVE_AS, NULL, "<shift><control>S",
+  {"FileSaveAs", "document-save-as", N_("Save _As"), "<shift><control>S",
    N_("Save the current file with another name"),
    G_CALLBACK (gtr_save_file_as_dialog)},
   /*{ "FileRevert", GTK_STOCK_REVERT_TO_SAVED, N_("_Revert"), NULL,
      N_(),
      G_CALLBACK (gtr_save_file_as_dialog) }, */
-  {"FileCloseWindow", GTK_STOCK_CLOSE, NULL, "<control>W",
+  {"FileCloseWindow", "window-close", N_("_Close"), "<control>W",
    N_("Close the current file"),
    G_CALLBACK (gtr_file_close)},
 
   /* Edit menu */
-  {"EditUndo", GTK_STOCK_UNDO, NULL, "<control>Z",
+  {"EditUndo", "edit-undo", N_("_Undo"), "<control>Z",
    N_("Undo last operation"),
    G_CALLBACK (gtr_actions_edit_undo)},
-  {"EditRedo", GTK_STOCK_REDO, NULL, "<shift><control>Z",
+  {"EditRedo", "edit-redo", N_("_Redo"), "<shift><control>Z",
    N_("Redo last undone operation"),
    G_CALLBACK (gtr_actions_edit_redo)},
-  {"EditCut", GTK_STOCK_CUT, NULL, "<control>X",
+  {"EditCut", "edit-cut", N_("Cu_t"), "<control>X",
    N_("Cut the selected text"),
    G_CALLBACK (gtr_actions_edit_cut)},
-  {"EditCopy", GTK_STOCK_COPY, NULL, "<control>C",
+  {"EditCopy", "edit-copy", N_("_Copy"), "<control>C",
    N_("Copy the selected text"),
    G_CALLBACK (gtr_actions_edit_copy)},
-  {"EditPaste", GTK_STOCK_PASTE, NULL, "<control>V",
+  {"EditPaste", "edit-paste", N_("_Paste"), "<control>V",
    N_("Paste the contents of the clipboard"),
    G_CALLBACK (gtr_actions_edit_paste)},
-  {"EditClear", GTK_STOCK_CLEAR, NULL, NULL,
+  {"EditClear", "edit-clear", N_("_Clear"), NULL,
    N_("Clear the selected translation"),
    G_CALLBACK (gtr_actions_edit_clear)},
-  {"EditHeader", GTK_STOCK_PROPERTIES, N_("_Header..."), NULL, NULL,
+  {"EditHeader", "document-properties", N_("_Header..."), NULL,
+   N_("Edit the file header details"),
    G_CALLBACK (gtr_actions_edit_header)},
   {"EditMessage2Trans", NULL, N_("Copy _Message to Translation"),
    "<control>space",
@@ -191,19 +192,19 @@ static const GtkActionEntry entries[] = {
    G_CALLBACK (gtr_actions_view_context)},
 
   /* Go menu */
-  {"GoPrevious", GTK_STOCK_GO_BACK, N_("_Previous Message"),
+  {"GoPrevious", "go-previous", N_("_Previous Message"),
    "<alt>Left", N_("Move back one message"),
    G_CALLBACK (gtr_message_go_to_previous)},
-  {"GoForward", GTK_STOCK_GO_FORWARD, N_("_Next Message"),
+  {"GoForward", "go-next", N_("_Next Message"),
    "<alt>Right", N_("Move forward one message"),
    G_CALLBACK (gtr_message_go_to_next)},
-  {"GoJump", GTK_STOCK_JUMP_TO, N_("_Go to Message..."),
+  {"GoJump", "go-jump", N_("_Go to Message..."),
    "<control>G", N_("Jumps to a specific message"),
    G_CALLBACK (gtr_message_jump)},
-  {"GoFirst", GTK_STOCK_GOTO_FIRST, N_("_First Message"),
+  {"GoFirst", "go-first", N_("_First Message"),
    "<alt>Home", N_("Go to the first message"),
    G_CALLBACK (gtr_message_go_to_first)},
-  {"GoLast", GTK_STOCK_GOTO_LAST, N_("_Last Message"),
+  {"GoLast", "go-last", N_("_Last Message"),
    "<alt>End", N_("Go to the last message"),
    G_CALLBACK (gtr_message_go_to_last)},
   {"GoNextFuzzy", GTR_STOCK_FUZZY_NEXT, N_("Next Fuz_zy"),
@@ -231,18 +232,18 @@ static const GtkActionEntry entries[] = {
    G_CALLBACK (gtr_message_go_to_prev_fuzzy_or_untranslated)},
 
   /* Search menu */
-  {"SearchFind", GTK_STOCK_FIND, NULL, "<control>F",
+  {"SearchFind", "edit-find", N_("_Find"), "<control>F",
    N_("Search for text"),
    G_CALLBACK (_gtr_actions_search_find)},
-  {"SearchReplace", GTK_STOCK_FIND_AND_REPLACE, NULL, "<control>H",
+  {"SearchReplace", "edit-find-replace", N_("Find and _Replace"), "<control>H",
    N_("Search for and replace text"),
    G_CALLBACK (_gtr_actions_search_replace)},
 
   /* Documents menu */
-  {"FileSaveAll", GTK_STOCK_SAVE, N_("_Save All"), "<shift><control>L",
+  {"FileSaveAll", "document-save", N_("_Save All"), "<shift><control>L",
    N_("Save all open files"),
    G_CALLBACK (_gtr_actions_file_save_all)},
-  {"FileCloseAll", GTK_STOCK_CLOSE, N_("_Close All"), "<shift><control>W",
+  {"FileCloseAll", "window-close", N_("_Close All"), "<shift><control>W",
    N_("Close all open files"),
    G_CALLBACK (_gtr_actions_file_close_all)},
   {"DocumentsPreviousDocument", NULL, N_("_Previous Document"),
@@ -1079,7 +1080,7 @@ gtr_window_cmd_edit_toolbar (GtkAction * action, GtrWindow * window)
   dialog = gtk_dialog_new_with_buttons (_("Toolbar Editor"),
                                         GTK_WINDOW (window),
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_STOCK_CLOSE,
+                                        _("_Close"),
                                         GTK_RESPONSE_CLOSE, NULL);
   content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
