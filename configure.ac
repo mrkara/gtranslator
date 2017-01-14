@@ -196,20 +196,6 @@ AM_CONDITIONAL(USE_GTKSPELL, test x"$have_gtkspell" = "xyes")
 AC_SUBST(GTKSPELL_CFLAGS)
 AC_SUBST(GTKSPELL_LIBS)
 
-dnl -------------------------------------------------------------------
-dnl Check for json-glib, needed for Open-tran
-dnl -------------------------------------------------------------------
-if test "x$enable_opentran" != "xno"; then
-	PKG_CHECK_MODULES(JSON_GLIB, [
-		json-glib-1.0 >= $JSON_GLIB_OPTIONAL
-		], have_json_glib=yes, have_json_glib=no)
-	if test x"$have_json_glib" = "xyes"; then
-		AC_DEFINE(LIBJSON_GLIB_1_0, 1, [Define if libjson-glib support is enabled])
-	fi
-fi
-
-AM_CONDITIONAL(USE_LIBJSON_GLIB, test x"$have_json_glib" = "xyes")
-
 # ================================================================
 # gdict
 # ================================================================
@@ -289,8 +275,6 @@ plugins/dictionary/Makefile
 plugins/dictionary/org.gnome.gtranslator.plugins.dictionary.gschema.xml
 plugins/fullscreen/Makefile
 plugins/insert-params/Makefile
-plugins/open-tran/Makefile
-plugins/open-tran/org.gnome.gtranslator.plugins.open-tran.gschema.xml
 plugins/codeview/Makefile
 plugins/codeview/org.gnome.gtranslator.plugins.codeview.gschema.xml
 plugins/translation-memory/Makefile
@@ -317,13 +301,6 @@ compilation warnings	  :	${WARN_CFLAGS}
 GObject Introspection	  :	$enable_introspection
 ------------------------------------------------------------------
 "
-
-if [ test x"$have_json_glib" = "xyes" ]; then
-	echo "Building open-tran plugin: .............................YES"
-else
-	echo "Building open-tran plugin: .............................NO"
-		echo "        Requires libjson-glib >= $JSON_GLIB_OPTIONAL"
-fi
 
 if [ test x"$have_gdict" = "xyes" ]; then
 	echo "Building dictionary plugin: ............................YES"
