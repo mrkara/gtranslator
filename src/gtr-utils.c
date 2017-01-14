@@ -61,36 +61,13 @@ gtr_xml_open_file (const gchar * filename)
 }
 
 /**
- * gtr_gtk_button_new_with_stock_icon:
- * @label: the label of the button
- * @stock_id: the id of the stock image
- * 
- * Convenience function to create a #GtkButton with a stock image.
- * 
- * Returns: a new #GtkButton
- */
-GtkWidget *
-gtr_gtk_button_new_with_stock_icon (const gchar * label,
-                                    const gchar * stock_id)
-{
-  GtkWidget *button;
-
-  button = gtk_button_new_with_mnemonic (label);
-  gtk_button_set_image (GTK_BUTTON (button),
-                        gtk_image_new_from_stock (stock_id,
-                                                  GTK_ICON_SIZE_BUTTON));
-
-  return button;
-}
-
-/**
  * gtr_utils_menu_position_under_widget:
  * @menu: a #GtkMenu
  * @x: the x position of the widget
  * @y: the y position of the widget
- * @push_in: 
+ * @push_in:
  * @user_data: the widget to get the position
- * 
+ *
  * It returns the position to popup a menu in a specific widget.
  */
 void

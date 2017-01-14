@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <nacho.resa@gmail.com>
+ *               2016  Muhammet Kara <muhammetk@gmail.com>
  * 
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -26,7 +27,6 @@
 #include "gtr-tab.h"
 #include "gtr-view.h"
 #include "gtr-debug.h"
-#include "gtr-utils.h"
 
 #include <string.h>
 #include <glib.h>
@@ -319,20 +319,17 @@ gtr_alternate_lang_panel_init (GtrAlternateLangPanel * panel)
   gtk_button_box_set_layout (GTK_BUTTON_BOX (buttonbox), GTK_BUTTONBOX_START);
   gtk_widget_show (buttonbox);
 
-  panel->priv->open_button = gtr_gtk_button_new_with_stock_icon (C_("alternate lang", "_Open"),
-                                                                 GTK_STOCK_OPEN);
+  panel->priv->open_button = gtk_button_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON);
   g_signal_connect (panel->priv->open_button,
                     "clicked", G_CALLBACK (open_button_clicked_cb), panel);
   gtk_widget_show (panel->priv->open_button);
 
-  panel->priv->close_button = gtr_gtk_button_new_with_stock_icon (C_("alternate lang", "_Close"),
-                                                                  GTK_STOCK_CLOSE);
+  panel->priv->close_button = gtk_button_new_from_icon_name ("window-close", GTK_ICON_SIZE_BUTTON);
   g_signal_connect (panel->priv->close_button,
                     "clicked", G_CALLBACK (close_button_clicked_cb), panel);
   gtk_widget_show (panel->priv->close_button);
 
-  panel->priv->copy_button = gtr_gtk_button_new_with_stock_icon (C_("alternate lang", "Co_py"),
-                                                                 GTK_STOCK_COPY);
+  panel->priv->copy_button = gtk_button_new_from_icon_name ("edit-copy", GTK_ICON_SIZE_BUTTON);
   g_signal_connect (panel->priv->copy_button,
                     "clicked", G_CALLBACK (copy_button_clicked_cb), panel);
   gtk_widget_show (panel->priv->copy_button);
