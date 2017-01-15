@@ -3,7 +3,8 @@
  * This file is part of gtranslator
  *
  * Copyright (C) 2004-2005 GNOME Foundation 
- *	         2008 Ignacio Casal Quinteiro
+ *               2008 Ignacio Casal Quinteiro
+ *               2017 Muhammet Kara
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -126,9 +127,9 @@ set_logout_mode (GtrCloseConfirmationDialog * dlg, gboolean logout_mode)
                          _("Close _without Saving"), GTK_RESPONSE_NO);
 
   gtk_dialog_add_button (GTK_DIALOG (dlg),
-                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+                         _("_Cancel"), GTK_RESPONSE_CANCEL);
 
-  gtk_dialog_add_button (GTK_DIALOG (dlg), GTK_STOCK_SAVE, GTK_RESPONSE_YES);
+  gtk_dialog_add_button (GTK_DIALOG (dlg), _("_Save"), GTK_RESPONSE_YES);
 
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_YES);
 }
@@ -350,8 +351,7 @@ build_single_doc_dialog (GtrCloseConfirmationDialog * dlg)
   doc = GTR_PO (dlg->priv->unsaved_documents->data);
 
   /* Image */
-  image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING,
-                                    GTK_ICON_SIZE_DIALOG);
+  image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
   gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
 
   /* Primary label */
@@ -512,8 +512,7 @@ build_multiple_docs_dialog (GtrCloseConfirmationDialog * dlg)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), hbox, TRUE, TRUE, 0);
 
   /* Image */
-  image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING,
-                                    GTK_ICON_SIZE_DIALOG);
+  image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
   gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
 
