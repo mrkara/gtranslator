@@ -75,7 +75,7 @@ gtr_viewer_init (GtrViewer * dlg)
   priv = dlg->priv;
 
   gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-                          GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
+                          "_Close", GTK_RESPONSE_CLOSE, NULL);
 
   gtk_window_set_title (GTK_WINDOW (dlg), _("Source Viewer"));
   gtk_window_set_default_size (GTK_WINDOW (dlg), 800, 600);
