@@ -99,9 +99,9 @@ on_search_button_clicked (GtkButton                  *button,
   filechooser = gtk_file_chooser_dialog_new ("Select PO directory",
                                              GTK_WINDOW (dlg),
                                              GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-                                             GTK_STOCK_CANCEL,
+                                             "_Cancel",
                                              GTK_RESPONSE_CANCEL,
-                                             GTK_STOCK_OK,
+                                             "_OK",
                                              GTK_RESPONSE_YES, NULL);
 
   g_signal_connect (GTK_DIALOG (filechooser), "response",
@@ -284,7 +284,7 @@ gtr_translation_memory_dialog_init (GtrTranslationMemoryDialog *dlg)
   priv->tm_settings = g_settings_new ("org.gnome.gtranslator.plugins.translation-memory");
 
   gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-                          GTK_STOCK_CLOSE,
+                          "_Close",
                           GTK_RESPONSE_CLOSE,
                           NULL);
 
