@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2007  Pablo Sanxiao <psanxiao@gmail.com>
  *               2010  Ignacio Casal Quinteiro <icq@gnome.org>
+ *               2017  Muhammet Kara <muhammetk@gmail.com>
  * 
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -264,7 +265,7 @@ gtr_header_dialog_init (GtrHeaderDialog * dlg)
   dlg->priv->settings = g_settings_new ("org.gnome.gtranslator.preferences.files");
 
   gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-                          GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL);
+                          _("_Close"), GTK_RESPONSE_CLOSE, NULL);
 
   gtk_window_set_title (GTK_WINDOW (dlg), _("Edit Header"));
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);

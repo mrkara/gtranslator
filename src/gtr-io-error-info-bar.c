@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <nacho.resa@gmail.com>
- * 		 2005  Paolo Maggi 
+ *               2005  Paolo Maggi
+ *               2017  Muhammet Kara <muhammetk@gmail.com>
  * 
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -116,7 +117,7 @@ create_error_info_bar (const gchar * primary_text,
 {
   GtkWidget *infobar;
 
-  infobar = gtk_info_bar_new_with_buttons (GTK_STOCK_CLOSE,
+  infobar = gtk_info_bar_new_with_buttons ("_Close",
                                            GTK_RESPONSE_CLOSE, NULL);
 
   gtk_info_bar_set_message_type (GTK_INFO_BAR (infobar), GTK_MESSAGE_WARNING);

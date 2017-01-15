@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <nacho.resa@gmail.com>
+ *               2017  Muhammet Kara <muhammetk@gmail.com>
  * 
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -42,10 +43,10 @@ gtr_file_chooser_new (GtkWindow * parent,
                                          FILESEL_SAVE) ?
                                         GTK_FILE_CHOOSER_ACTION_SAVE :
                                         GTK_FILE_CHOOSER_ACTION_OPEN,
-                                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                        _("_Cancel"), GTK_RESPONSE_CANCEL,
                                         (mode ==
-                                         FILESEL_SAVE) ? GTK_STOCK_SAVE :
-                                        GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+                                         FILESEL_SAVE) ? _("_Save") :
+                                        _("_Open"), GTK_RESPONSE_ACCEPT,
                                         NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
 

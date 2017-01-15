@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008  Ignacio Casal Quinteiro <nacho.resa@gmail.com>
+ *               2017  Muhammet Kara <muhammetk@gmail.com>
  * 
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -86,9 +87,9 @@ gtr_jump_dialog_init (GtrJumpDialog * dlg)
   priv = dlg->priv;
 
   gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-                          GTK_STOCK_OK,
+                          _("_OK"),
                           GTK_RESPONSE_OK,
-                          GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
+                          _("_Cancel"), GTK_RESPONSE_CANCEL, NULL);
 
   gtk_window_set_title (GTK_WINDOW (dlg), _("Go to Message"));
   gtk_window_set_default_size (GTK_WINDOW (dlg), 300, 100);
