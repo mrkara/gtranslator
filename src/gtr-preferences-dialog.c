@@ -2,6 +2,7 @@
  * Copyright (C) 2007  Ignacio Casal Quinteiro <nacho.resa@gmail.com>
  *               2008  Pablo Sanxiao <psanxiao@gmail.com>
  *                     Igalia
+ *               2017  Muhammet Kara <muhammetk@gmail.com>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -423,10 +424,10 @@ delete_button_clicked (GtkWidget *button, GtrPreferencesDialog *dlg)
           g_free(markup);
 
           gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+                                 _("_Cancel"), GTK_RESPONSE_CANCEL);
 
           gtk_dialog_add_button (GTK_DIALOG (dialog),
-                                 GTK_STOCK_DELETE, GTK_RESPONSE_YES);
+                                 _("_Delete"), GTK_RESPONSE_YES);
 
           gtk_dialog_run (GTK_DIALOG (dialog));
 
@@ -641,9 +642,9 @@ gtr_preferences_dialog_init (GtrPreferencesDialog * dlg)
   priv->files_settings = g_settings_new ("org.gnome.gtranslator.preferences.files");
 
   gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-                          GTK_STOCK_CLOSE,
+                          _("_Close"),
                           GTK_RESPONSE_CLOSE,
-                          GTK_STOCK_HELP, GTK_RESPONSE_HELP, NULL);
+                          _("_Help"), GTK_RESPONSE_HELP, NULL);
 
   gtk_window_set_title (GTK_WINDOW (dlg), _("Gtranslator Preferences"));
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);

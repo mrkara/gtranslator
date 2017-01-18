@@ -3,7 +3,8 @@
  * This file is part of gtranslator based on gedit
  *
  * Copyright (C) 2005 Paolo Maggi
- * 		 2007 Ignacio Casal
+ *               2007 Ignacio Casal
+ *               2017 Muhammet Kara
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -390,7 +391,7 @@ gtr_search_dialog_init (GtrSearchDialog * dlg)
   gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
 
   gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-                          GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL, NULL);
+                          _("_Close"), GTK_RESPONSE_CANCEL, NULL);
 
   action_area = gtk_dialog_get_action_area (GTK_DIALOG (dlg));
   content_area = GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
@@ -452,13 +453,10 @@ gtr_search_dialog_init (GtrSearchDialog * dlg)
   gtk_label_set_mnemonic_widget (GTK_LABEL (dlg->priv->replace_label),
                                  dlg->priv->replace_entry);
 
-  dlg->priv->find_button = gtk_button_new_from_stock (GTK_STOCK_FIND);
+  dlg->priv->find_button = gtk_button_new_with_mnemonic (_("_Find"));
   dlg->priv->replace_all_button =
     gtk_button_new_with_mnemonic (_("Replace _All"));
-  dlg->priv->replace_button =
-    gtk_button_new_from_stock (GTK_STOCK_FIND_AND_REPLACE);
-  gtk_button_set_label (GTK_BUTTON (dlg->priv->replace_button),
-                        _("_Replace"));
+  dlg->priv->replace_button = gtk_button_new_with_mnemonic (_("_Replace"));
 
   gtk_dialog_add_action_widget (GTK_DIALOG (dlg),
                                 dlg->priv->replace_all_button,

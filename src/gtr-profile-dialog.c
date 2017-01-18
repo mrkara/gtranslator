@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2007  Pablo Sanxiao <psanxiao@gmail.com>
- *               2008  Igalia 
+ *               2008  Igalia
+ *               2017  Muhammet Kara <muhammetk@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -77,7 +78,7 @@ gtr_profile_dialog_init (GtrProfileDialog *dlg)
   priv = dlg->priv;
 
   gtk_dialog_add_button (GTK_DIALOG (dlg),
-                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+                         _("_Cancel"), GTK_RESPONSE_CANCEL);
 
   gtk_window_set_title (GTK_WINDOW (dlg), _("Gtranslator Profile"));
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
@@ -172,12 +173,12 @@ gtr_profile_dialog_new (GtkWidget  *parent,
       /* We distinguish in the preferences dialog if we are modifying
          or adding a new profile depending on the response */
       gtk_dialog_add_button (GTK_DIALOG (dlg),
-                             GTK_STOCK_OK, GTK_RESPONSE_YES);
+                             _("_OK"), GTK_RESPONSE_YES);
     }
   else
     {
       gtk_dialog_add_button (GTK_DIALOG (dlg),
-                             GTK_STOCK_OK, GTK_RESPONSE_ACCEPT);
+                             _("_OK"), GTK_RESPONSE_ACCEPT);
     }
 
   if (GTK_WINDOW (parent) != gtk_window_get_transient_for (GTK_WINDOW (dlg)))
