@@ -51,6 +51,7 @@ gtr_about_dialog (GtrWindow *window)
     "",
     N_("Current Developers"),
     "------------------------",
+    "Muhammet Kara <muhammetk@gmail.com>",
     "Seán de Búrca <leftmostcat@gmail.com>",
     "Ignacio Casal Quinteiro <icq@gnome.org>",
     "",
@@ -84,7 +85,8 @@ gtr_about_dialog (GtrWindow *window)
 
   static const gchar copyright[] =
     "Copyright © 1999-2008 Free Software Foundation, Inc.\n"
-    "Copyright © 2007-2012 Ignacio Casal Quinteiro";
+    "Copyright © 2007-2012 Ignacio Casal Quinteiro\n"
+    "Copyright © 2017 Muhammet Kara";
 
   static const gchar comments[] =
     N_("Translation file editing suite for localization of applications and libraries.");
