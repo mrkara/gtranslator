@@ -146,9 +146,6 @@ static const GtkActionEntry entries[] = {
   {"FileSaveAs", "document-save-as", N_("Save _As"), "<shift><control>S",
    N_("Save the current file with another name"),
    G_CALLBACK (gtr_save_file_as_dialog)},
-  /*{ "FileRevert", GTK_STOCK_REVERT_TO_SAVED, N_("_Revert"), NULL,
-     N_(),
-     G_CALLBACK (gtr_save_file_as_dialog) }, */
   {"FileCloseWindow", "window-close", N_("_Close"), "<control>W",
    N_("Close the current file"),
    G_CALLBACK (gtr_file_close)},
