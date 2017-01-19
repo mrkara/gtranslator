@@ -8,12 +8,12 @@
  *
  * gtranslator is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or   
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
- *    
+ *
  * gtranslator is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -23,7 +23,7 @@
  *   Fatih Demir <kabalak@kabalak.net>
  *   Pablo Sanxiao <psanxiao@gmail.com>
  *   Ignacio Casal <nacho.resa@gmail.com>
- *   Paolo Maggi 
+ *   Paolo Maggi
  *
  */
 
@@ -104,9 +104,9 @@ gtr_utils_menu_position_under_widget (GtkMenu * menu,
  * @menu: a #GtkMenu
  * @x: the x position of the widget
  * @y: the y position of the widget
- * @push_in: 
+ * @push_in:
  * @user_data: the widget to get the position
- * 
+ *
  * It returns the position to popup a menu in a TreeView.
  */
 void
@@ -224,9 +224,9 @@ gtr_utils_is_valid_uri (const gchar * uri)
  * @selection_data: the #GtkSelectionData from drag_data_received
  *
  * Create a list of valid uri's from a uri-list drop.
- * 
- * Returns: a string array which will hold the uris or NULL if there 
- *		 were no valid uris. g_strfreev should be used when the 
+ *
+ * Returns: a string array which will hold the uris or NULL if there
+ *		 were no valid uris. g_strfreev should be used when the
  *		 string array is no longer used
  */
 GSList *
@@ -427,7 +427,7 @@ finally_2:
  * @parent: a #GtkWindow
  * @doc_id: the name of the type of doc
  * @file_name: the name of the doc
- * 
+ *
  * Shows the help for an specific document in the default help browser.
  */
 void
@@ -445,7 +445,7 @@ gtr_utils_help_display (GtkWindow * parent,
 
 
   /* FIXME: How to display help on windows. Gedit opens a browser and displays
-     a url with the contents of the help 
+     a url with the contents of the help
      if (uri == NULL)
      {
      GtkWidget *dialog;

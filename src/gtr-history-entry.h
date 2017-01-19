@@ -20,9 +20,9 @@
  */
 
 /*
- * Modified by the gtr Team, 2006. See the AUTHORS file for a 
- * list of people on the gtr Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the gtr Team, 2006. See the AUTHORS file for a
+ * list of people on the gtr Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */

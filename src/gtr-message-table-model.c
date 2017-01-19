@@ -399,7 +399,7 @@ gtr_message_table_model_class_init (GtrMessageTableModelClass * klass)
 
 /**
  * gtr_message_table_model_new:
- * 
+ *
  * Return value: a new #GtrMessageTableModel object
  **/
 GtrMessageTableModel *

@@ -41,7 +41,7 @@ typedef struct _GtrTabLabelPrivate	GtrTabLabelPrivate;
 
 struct _GtrTabLabel {
 	GtkBox parent;
-	
+
 	GtrTabLabelPrivate *priv;
 };
 

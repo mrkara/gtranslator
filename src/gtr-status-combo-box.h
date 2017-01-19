@@ -42,7 +42,7 @@ typedef struct _GtrStatusComboBoxClassPrivate	GtrStatusComboBoxClassPrivate;
 struct _GtrStatusComboBox
 {
 	GtkEventBox parent;
-	
+
 	GtrStatusComboBoxPrivate *priv;
 };
 
@@ -51,7 +51,7 @@ struct _GtrStatusComboBoxClass
 	GtkEventBoxClass parent_class;
 
 	GtrStatusComboBoxClassPrivate *priv;
-	
+
 	void (*changed) (GtrStatusComboBox *combo,
 			 GtkMenuItem         *item);
 };

@@ -318,7 +318,7 @@ gtr_tab_label_set_close_button_sensitive (GtrTabLabel *tab_label,
 
   tab_label->priv->close_button_sensitive = sensitive;
 
-  gtk_widget_set_sensitive (tab_label->priv->close_button, 
+  gtk_widget_set_sensitive (tab_label->priv->close_button,
                             tab_label->priv->close_button_sensitive);
 }
 

@@ -1,16 +1,16 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <icq@gnome.org>
- * 
+ *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
- * 
+ *
  *     This program is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
- * 
+ *
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -133,7 +133,7 @@ event_after (GtkWidget *text_view,
   return FALSE;
 }
 
-/* Looks at all tags covering the position (x, y) in the text view, 
+/* Looks at all tags covering the position (x, y) in the text view,
  * and if one of them is a link, change the cursor to the "hands" cursor
  * typically used by web browsers.
  */
@@ -501,9 +501,9 @@ gtr_context_panel_class_init (GtrContextPanelClass * klass)
 /**
  * gtr_context_panel_new:
  * @tab: a #GtrTab
- * 
+ *
  * Creates a new #GtrContextPanel object.
- * 
+ *
  * Returns: a new #GtrContextPanel object
  */
 GtkWidget *

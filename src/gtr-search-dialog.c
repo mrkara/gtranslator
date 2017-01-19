@@ -22,9 +22,9 @@
  */
 
 /*
- * Modified by the gedit Team, 2005. See the AUTHORS file for a 
- * list of people on the gedit Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the gedit Team, 2005. See the AUTHORS file for a
+ * list of people on the gedit Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id: gedit-search-dialog.c 5931 2007-09-25 20:05:40Z pborelli $
  */
@@ -163,7 +163,7 @@ gtr_search_dialog_class_init (GtrSearchDialogClass * klass)
 
   binding_set = gtk_binding_set_by_class (klass);
 
-  /* Note: we cannot use the keyval/modifier associated with the 
+  /* Note: we cannot use the keyval/modifier associated with the
    * GTK_STOCK_FIND_AND_REPLACE stock item since GNOME HIG suggests Ctrl+h
    * for Replace while gtk+ uses Ctrl+r */
   gtk_binding_entry_add_signal (binding_set, GDK_KEY_h, GDK_CONTROL_MASK,

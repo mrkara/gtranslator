@@ -2,7 +2,7 @@
  * gtr-close-confirmation-dialog.h
  * This file is part of gtranslator
  *
- * Copyright (C) 2004-2005 GNOME Foundation 
+ * Copyright (C) 2004-2005 GNOME Foundation
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,9 +20,9 @@
  */
 
 /*
- * Modified by the gedit Team, 2004-2005. See the AUTHORS file for a 
- * list of people on the gtr Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the gedit Team, 2004-2005. See the AUTHORS file for a
+ * list of people on the gtr Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 #ifndef __GTR_CLOSE_CONFIRMATION_DIALOG_H__

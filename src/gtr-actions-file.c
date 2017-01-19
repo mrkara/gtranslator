@@ -9,12 +9,12 @@
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
- * 
+ *
  *     This program is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
- * 
+ *
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -150,7 +150,7 @@ gtr_po_parse_files_from_dialog (GtkWidget * dialog, GtrWindow * window)
   g_slist_free_full (locations, g_object_unref);
 
   /*
-   * Destroy the dialog 
+   * Destroy the dialog
    */
   gtk_widget_destroy (dialog);
 }
@@ -204,7 +204,7 @@ gtr_open_file_dialog (GtkAction * action, GtrWindow * window)
   /*
    * With the gettext parser/writer API, we can't currently read/write
    * to remote files with gnome-vfs. Eventually, we should intercept
-   * remote requests and use gnome-vfs to retrieve a temporary file to 
+   * remote requests and use gnome-vfs to retrieve a temporary file to
    * work on, and transmit it back when saved.
    */
   //gtk_file_chooser_set_local_only(GTK_FILE_CHOOSER(dialog), TRUE);
@@ -483,7 +483,7 @@ load_file_list (GtrWindow * window, const GSList * locations)
 /**
  * gtr_actions_load_uris:
  *
- * Ignore non-existing URIs 
+ * Ignore non-existing URIs
  */
 void
 gtr_actions_load_locations (GtrWindow * window, const GSList * locations)

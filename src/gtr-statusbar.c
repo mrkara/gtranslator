@@ -6,12 +6,12 @@
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
- * 
+ *
  *     This program is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
- * 
+ *
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -195,8 +195,8 @@ gtr_statusbar_push (GtrStatusbar * statusbar,
  * gtr_statusbar_pop:
  * @statusbar: a #GtrStatusbar
  * @context_id: a context identifier
- * 
- * Removes the first message in the GtkStatusBar's stack with the given context id. 
+ *
+ * Removes the first message in the GtkStatusBar's stack with the given context id.
  */
 void
 gtr_statusbar_pop (GtrStatusbar * statusbar, guint context_id)
@@ -213,7 +213,7 @@ gtr_statusbar_pop (GtrStatusbar * statusbar, guint context_id)
  *
  * Returns a new context identifier, given a description of the actual context.
  * Note that the description is not shown in the UI.
- * 
+ *
  * Returns: an integer id
  */
 guint
@@ -324,7 +324,7 @@ gtr_statusbar_flash_message (GtrStatusbar * statusbar,
  * @statusbar: a #GtrStatusbar
  * @translated_count: the number of translated messages
  * @messages_count: the number of messages
- * 
+ *
  * Updates the state of the progress bar with the given values.
  */
 void

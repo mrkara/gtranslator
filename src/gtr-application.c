@@ -1,17 +1,17 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <icq@gnome.org>
- *               2008  Igalia 
+ *               2008  Igalia
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -433,7 +433,7 @@ _gtr_application_new ()
  * @app: a #GtrApplication
  *
  * Creates a new #GtrWindow and shows it.
- * 
+ *
  * Returns: (transfer none):  the #GtrWindow to be opened
  */
 GtrWindow *
@@ -484,9 +484,9 @@ gtr_application_create_window (GtrApplication *app)
 /**
  * _gtr_application_get_toolbars_model:
  * @application: a #GtrApplication
- * 
+ *
  * Returns the toolbar model.
- * 
+ *
  * Returns: the toolbar model.
  */
 GObject *
@@ -498,7 +498,7 @@ _gtr_application_get_toolbars_model (GtrApplication * application)
 /**
  * _gtr_application_save_toolbars_model:
  * @application: a #GtrApplication
- * 
+ *
  * Saves the toolbar model.
  */
 void
@@ -537,7 +537,7 @@ gtr_application_get_views (GtrApplication * app,
 /**
  * gtr_application_get_active_window:
  * @app: a #GtrApplication
- * 
+ *
  * Return value: (transfer none): the active #GtrWindow
  **/
 GtrWindow *
@@ -553,7 +553,7 @@ gtr_application_get_active_window (GtrApplication * app)
  * @app: a #GtrApplication
  * @icon: the name of the icon
  * @stock_id: the stock id for the new icon
- * 
+ *
  * Registers a new @icon with the @stock_id.
  */
 void

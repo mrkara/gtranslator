@@ -1,16 +1,16 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <nacho.resa@gmail.com>
- * 
+ *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
- * 
+ *
  *     This program is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
- * 
+ *
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -131,9 +131,9 @@ gtr_notebook_class_init (GtrNotebookClass * klass)
 
 /**
  * gtr_notebook_new:
- * 
+ *
  * Creates a new #GtrNotebook.
- * 
+ *
  * Returns: a new #GtrNotebook object
  */
 GtkWidget *
@@ -146,7 +146,7 @@ gtr_notebook_new ()
  * gtr_notebook_add_page:
  * @notebook: a #GtrNotebook
  * @tab: a #GtrTab
- * 
+ *
  * Adds a new #GtrTab to @notebook.
  */
 void
@@ -214,9 +214,9 @@ gtr_notebook_remove_all_pages (GtrNotebook *notebook)
 /**
  * gtr_notebook_get_page:
  * @notebook: a #GtrNotebook
- * 
+ *
  * Gets the selected page in the #GtrNotebook.
- * 
+ *
  * Returns: (transfer none): the selected page in the @notebook
  */
 GtrTab *

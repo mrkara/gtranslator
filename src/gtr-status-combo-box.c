@@ -35,7 +35,7 @@ struct _GtrStatusComboBoxPrivate
 	GtkWidget *label;
 	GtkWidget *item;
 	GtkWidget *arrow;
-	
+
 	GtkWidget *menu;
 	GtkWidget *current_item;
 };
@@ -53,10 +53,10 @@ enum
 };
 
 /* Properties */
-enum 
+enum
 {
 	PROP_0,
-	
+
 	PROP_LABEL
 };
 
@@ -114,7 +114,7 @@ gtr_status_combo_box_changed (GtrStatusComboBox *combo,
 				GtkMenuItem         *item)
 {
 	const gchar *text;
-	
+
 	text = g_object_get_data (G_OBJECT (item), COMBO_BOX_TEXT_DATA);
 
 	if (text != NULL)
@@ -137,11 +137,11 @@ gtr_status_combo_box_class_init (GtrStatusComboBoxClass *klass)
 		  "-GtkWidget-focus-padding : 0;\n"
 		  "padding: 0;\n"
 		"}";
-	
+
 	object_class->finalize = gtr_status_combo_box_finalize;
 	object_class->get_property = gtr_status_combo_box_get_property;
 	object_class->set_property = gtr_status_combo_box_set_property;
-	
+
 	klass->changed = gtr_status_combo_box_changed;
 
 	signals[CHANGED] =
@@ -152,7 +152,7 @@ gtr_status_combo_box_class_init (GtrStatusComboBoxClass *klass)
 					   changed), NULL, NULL,
 			  g_cclosure_marshal_VOID__OBJECT, G_TYPE_NONE, 1,
 			  GTK_TYPE_MENU_ITEM);
-			  
+
 	g_object_class_install_property (object_class, PROP_LABEL,
 					 g_param_spec_string ("label",
 					 		      "LABEL",
@@ -184,22 +184,22 @@ menu_position_func (GtkMenu		*menu,
 {
 	GtkRequisition request;
 	GtkAllocation allocation;
-	
+
 	*push_in = FALSE;
 
 	gtk_widget_get_preferred_size (gtk_widget_get_toplevel (GTK_WIDGET (menu)),
 	                               &request, NULL);
-	
+
 	/* get the origin... */
 	gdk_window_get_origin (gtk_widget_get_window (GTK_WIDGET (combo)), x, y);
-	
+
 	/* make the menu as wide as the widget */
 	gtk_widget_get_allocation (GTK_WIDGET (combo), &allocation);
 	if (request.width < allocation.width)
 	{
 		gtk_widget_set_size_request (GTK_WIDGET (menu), allocation.width, -1);
 	}
-	
+
 	/* position it above the widget */
 	*y -= request.height;
 }
@@ -219,13 +219,13 @@ show_menu (GtrStatusComboBox *combo,
 	/* do something relative to our own height here, maybe we can do better */
 	gtk_widget_get_allocation (GTK_WIDGET (combo), &allocation);
 	max_height = allocation.height * 20;
-	
+
 	if (request.height > max_height)
 	{
 		gtk_widget_set_size_request (combo->priv->menu, -1, max_height);
 		gtk_widget_set_size_request (gtk_widget_get_toplevel (combo->priv->menu), -1, max_height);
 	}
-	
+
 	gtk_menu_popup (GTK_MENU (combo->priv->menu),
 			NULL,
 			NULL,
@@ -238,7 +238,7 @@ show_menu (GtrStatusComboBox *combo,
 
 	if (combo->priv->current_item)
 	{
-		gtk_menu_shell_select_item (GTK_MENU_SHELL (combo->priv->menu), 
+		gtk_menu_shell_select_item (GTK_MENU_SHELL (combo->priv->menu),
 					    combo->priv->current_item);
 	}
 }
@@ -301,7 +301,7 @@ gtr_status_combo_box_init (GtrStatusComboBox *self)
 
 	self->priv->frame = gtk_frame_new (NULL);
 	gtk_widget_show (self->priv->frame);
-	
+
 	self->priv->button = gtk_toggle_button_new ();
 	gtk_button_set_relief (GTK_BUTTON (self->priv->button), GTK_RELIEF_NONE);
 	gtk_widget_show (self->priv->button);
@@ -314,28 +314,28 @@ gtr_status_combo_box_init (GtrStatusComboBox *self)
 	gtk_container_add (GTK_CONTAINER (self), self->priv->frame);
 	gtk_container_add (GTK_CONTAINER (self->priv->frame), self->priv->button);
 	gtk_container_add (GTK_CONTAINER (self->priv->button), self->priv->hbox);
-	
+
 	self->priv->label = gtk_label_new ("");
 	gtk_widget_show (self->priv->label);
-	
+
 	gtk_label_set_single_line_mode (GTK_LABEL (self->priv->label), TRUE);
 	gtk_widget_set_halign (self->priv->label, GTK_ALIGN_START);
-	
+
 	gtk_box_pack_start (GTK_BOX (self->priv->hbox), self->priv->label, FALSE, TRUE, 0);
-	
+
 	self->priv->item = gtk_label_new ("");
 	gtk_widget_show (self->priv->item);
-	
+
 	gtk_label_set_single_line_mode (GTK_LABEL (self->priv->item), TRUE);
 	gtk_widget_set_halign (self->priv->item, GTK_ALIGN_START);
-	
+
 	gtk_box_pack_start (GTK_BOX (self->priv->hbox), self->priv->item, TRUE, TRUE, 0);
-	
+
 	self->priv->arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_NONE);
 	gtk_widget_show (self->priv->arrow);
 
 	gtk_box_pack_start (GTK_BOX (self->priv->hbox), self->priv->arrow, FALSE, TRUE, 0);
-	
+
 	self->priv->menu = gtk_menu_new ();
 	g_object_ref_sink (self->priv->menu);
 
@@ -381,13 +381,13 @@ gtr_status_combo_box_new (const gchar *label)
  * @label: (allow-none):
  */
 void
-gtr_status_combo_box_set_label (GtrStatusComboBox *combo, 
+gtr_status_combo_box_set_label (GtrStatusComboBox *combo,
 				  const gchar         *label)
 {
 	gchar *text;
 
 	g_return_if_fail (GTR_IS_STATUS_COMBO_BOX (combo));
-	
+
 	text = g_strconcat ("  ", label, ": ", NULL);
 	gtk_label_set_markup (GTK_LABEL (combo->priv->label), text);
 	g_free (text);
@@ -423,7 +423,7 @@ gtr_status_combo_box_add_item (GtrStatusComboBox *combo,
 	g_return_if_fail (GTK_IS_MENU_ITEM (item));
 
 	gtk_menu_shell_append (GTK_MENU_SHELL (combo->priv->menu), GTK_WIDGET (item));
-	
+
 	gtr_status_combo_box_set_item_text (combo, item, text);
 	g_signal_connect (item, "activate", G_CALLBACK (item_activated), combo);
 }
@@ -458,12 +458,12 @@ gtr_status_combo_box_get_item_text (GtrStatusComboBox *combo,
 				      GtkMenuItem	  *item)
 {
 	const gchar *ret = NULL;
-	
+
 	g_return_val_if_fail (GTR_IS_STATUS_COMBO_BOX (combo), NULL);
 	g_return_val_if_fail (GTK_IS_MENU_ITEM (item), NULL);
-	
+
 	ret = g_object_get_data (G_OBJECT (item), COMBO_BOX_TEXT_DATA);
-	
+
 	return ret;
 }
 
@@ -473,7 +473,7 @@ gtr_status_combo_box_get_item_text (GtrStatusComboBox *combo,
  * @item:
  * @text: (allow-none):
  */
-void 
+void
 gtr_status_combo_box_set_item_text (GtrStatusComboBox *combo,
 				      GtkMenuItem	  *item,
 				      const gchar         *text)
@@ -481,7 +481,7 @@ gtr_status_combo_box_set_item_text (GtrStatusComboBox *combo,
 	g_return_if_fail (GTR_IS_STATUS_COMBO_BOX (combo));
 	g_return_if_fail (GTK_IS_MENU_ITEM (item));
 
-	g_object_set_data_full (G_OBJECT (item), 
+	g_object_set_data_full (G_OBJECT (item),
 				COMBO_BOX_TEXT_DATA,
 				g_strdup (text),
 				(GDestroyNotify)g_free);
@@ -501,7 +501,7 @@ GtkLabel *
 gtr_status_combo_box_get_item_label (GtrStatusComboBox *combo)
 {
 	g_return_val_if_fail (GTR_IS_STATUS_COMBO_BOX (combo), NULL);
-	
+
 	return GTK_LABEL (combo->priv->item);
 }
 

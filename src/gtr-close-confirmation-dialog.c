@@ -2,7 +2,7 @@
  * gtr-close-confirmation-dialog.c
  * This file is part of gtranslator
  *
- * Copyright (C) 2004-2005 GNOME Foundation 
+ * Copyright (C) 2004-2005 GNOME Foundation
  *               2008 Ignacio Casal Quinteiro
  *               2017 Muhammet Kara
  *
@@ -86,7 +86,7 @@ G_DEFINE_TYPE (GtrCloseConfirmationDialog,
 
      static GList *get_selected_docs (GtkTreeModel * store);
 
-/*  Since we connect in the costructor we are sure this handler will be called 
+/*  Since we connect in the costructor we are sure this handler will be called
  *  before the user ones
  */
      static void

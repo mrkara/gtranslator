@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -205,7 +205,7 @@ gtr_msg_is_translated (GtrMsg *msg)
 /**
  * gtr_msg_is_fuzzy:
  * @msg: a #GtrMsg
- * 
+ *
  * Return value: TRUE if the message is fuzzy
  **/
 gboolean
@@ -221,7 +221,7 @@ gtr_msg_is_fuzzy (GtrMsg * msg)
  * gtr_msg_set_fuzzy:
  * @msg: a #GtrMsg
  * @fuzzy: the fuzzy value to set to the message
- * 
+ *
  * Change the fuzzy mark of a message.
  **/
 void
@@ -236,7 +236,7 @@ gtr_msg_set_fuzzy (GtrMsg * msg, gboolean fuzzy)
  * gtr_msg_set_status:
  * @msg: a #GtrMsg
  * @status: a #GtrMsgStatus
- * 
+ *
  * Sets the status for a message.
  */
 void
@@ -250,7 +250,7 @@ gtr_msg_set_status (GtrMsg * msg, GtrMsgStatus status)
 /**
  * gtr_msg_get_status:
  * @msg: a #GtrMsg
- * 
+ *
  * Return value: the message's status.
  */
 GtrMsgStatus
@@ -279,7 +279,7 @@ gtr_msg_get_msgid (GtrMsg * msg)
 /**
  * gtr_msg_get_msgid_plural:
  * @msg: a #GtrMsg
- * 
+ *
  * Return value: (transfer none): the msgid_plural (untranslated English plural
  *               string) of a message, or NULL for a message without plural.
  **/
@@ -293,7 +293,7 @@ gtr_msg_get_msgid_plural (GtrMsg * msg)
 /**
  * gtr_msg_get_msgstr:
  * @msg: a #GtrMsg
- * 
+ *
  * Return value: (transfer none): the msgstr (translation) of a message.
  * Return the empty string for an untranslated message.
  **/
@@ -310,7 +310,7 @@ gtr_msg_get_msgstr (GtrMsg * msg)
  * gtr_msg_set_msgstr:
  * @msg: a #GtrMsg
  * @msgstr: the string to set in the @msg
- * 
+ *
  * Change the msgstr (translation) of a message.
  * Use an empty string to denote an untranslated message.
  **/
@@ -378,9 +378,9 @@ gtr_msg_get_comment (GtrMsg * msg)
  * gtr_msg_set_comment:
  * @msg: a #GtrMsg
  * @comment: the comment to set for a message
- * 
+ *
  * Change the comments for a message.
- * comments should be a multiline string, 
+ * comments should be a multiline string,
  * ending in a newline, or empty.
  **/
 void
@@ -506,7 +506,7 @@ gtr_msg_get_msgctxt (GtrMsg * msg)
  * Return the pretty name associated with a format type.
  * For example, for "csharp-format", return "C#".
  * Return NULL if the are no format type in the message.
- * 
+ *
  * Return value: (transfer none): the pretty name associated with a format type
  *               or NULL if the message hasn't any format type.
  */
@@ -560,9 +560,9 @@ on_gettext_po_xerror2 (gint severity,
 /**
  * gtr_msg_check:
  * @msg: a #GtrMsg
- * 
+ *
  * Test whether the message translation is a valid format string if the message
- * is marked as being a format string.  
+ * is marked as being a format string.
  *
  * Return value: (transfer full): the message error or NULL if there is not any
  *               error. Must be freed with g_free.

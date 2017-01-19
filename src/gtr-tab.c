@@ -10,12 +10,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -474,7 +474,7 @@ gtr_message_plural_forms (GtrTab * tab, GtrMsg * msg)
  * gtr_tab_show_message:
  * @tab: a #GtranslationTab
  * @msg: a #GtrMsg
- * 
+ *
  * Shows the @msg in the @tab TextViews
  *
  */
@@ -1075,9 +1075,9 @@ gtr_tab_class_init (GtrTabClass * klass)
 /**
  * gtr_tab_new:
  * @po: a #GtrPo
- * 
+ *
  * Creates a new #GtrTab.
- * 
+ *
  * Return value: a new #GtrTab object
  **/
 GtrTab *
@@ -1126,7 +1126,7 @@ gtr_tab_get_po (GtrTab * tab)
 /**
  * gtr_tab_get_active_trans_tab:
  * @tab: a #GtranslationTab
- * 
+ *
  * Return value: the number of the active translation notebook.
  **/
 gint
@@ -1231,10 +1231,10 @@ gtr_tab_message_go_to (GtrTab * tab,
        * we have to change to the next/prev plural tab in case is not
        * the last
        * To implement that:
-       * if the tabs are showed then we check if we want prev or 
-       * next and then if we need to change the tab we change it 
+       * if the tabs are showed then we check if we want prev or
+       * next and then if we need to change the tab we change it
        * in other case we show the message
-       * 
+       *
        * I don't like too much this implementation so if anybody can
        * rewrite this is a better way would be great.
        */
@@ -1290,8 +1290,8 @@ gtr_tab_message_go_to (GtrTab * tab,
 
 /**
  * _gtr_tab_get_name:
- * @tab: a #GtrTab 
- * 
+ * @tab: a #GtrTab
+ *
  * Return value: a new allocated string with the name of the @tab.
  */
 gchar *
@@ -1371,9 +1371,9 @@ gtr_tab_get_from_document (GtrPo * po)
 /**
  * gtr_tab_get_autosave_enabled:
  * @tab: a #GtrTab
- * 
+ *
  * Gets the current state for the autosave feature
- * 
+ *
  * Return value: TRUE if the autosave is enabled, else FALSE
  **/
 gboolean
@@ -1388,7 +1388,7 @@ gtr_tab_get_autosave_enabled (GtrTab * tab)
  * gtr_tab_set_autosave_enabled:
  * @tab: a #GtrTab
  * @enable: enable (TRUE) or disable (FALSE) auto save
- * 
+ *
  * Enables or disables the autosave feature. It does not install an
  * autosave timeout if the document is new or is read-only
  **/
@@ -1422,9 +1422,9 @@ gtr_tab_set_autosave_enabled (GtrTab * tab, gboolean enable)
 /**
  * gtr_tab_get_autosave_interval:
  * @tab: a #GtrTab
- * 
+ *
  * Gets the current interval for the autosaves
- * 
+ *
  * Return value: the value of the autosave
  **/
 gint
@@ -1439,7 +1439,7 @@ gtr_tab_get_autosave_interval (GtrTab * tab)
  * gtr_tab_set_autosave_interval:
  * @tab: a #GtrTab
  * @interval: the new interval
- * 
+ *
  * Sets the interval for the autosave feature. It does nothing if the
  * interval is the same as the one already present. It removes the old
  * interval timeout and adds a new one with the autosave passed as
@@ -1542,7 +1542,7 @@ gtr_tab_show_widget (GtrTab    *tab,
 /**
  * gtr_tab_clear_msgstr_views:
  * @tab: a #GtrTab
- * 
+ *
  * Clears all text from msgstr text views.
  */
 void
@@ -1616,7 +1616,7 @@ gtr_tab_block_movement (GtrTab * tab)
 /**
  * gtr_tab_unblock_movement:
  * @tab: a #GtrTab
- * 
+ *
  * Unblocks the movement to the next/prev message.
  */
 void
@@ -1706,7 +1706,7 @@ gtr_tab_go_to_first (GtrTab * tab)
 
 /**
  * gtr_tab_go_to_last:
- * @tab: a #GtrTab 
+ * @tab: a #GtrTab
  *
  * Jumps to the last message.
  */
