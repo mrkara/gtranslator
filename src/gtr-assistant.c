@@ -247,7 +247,7 @@ create_profiles_page1 (GtrAssistant * as)
   markup = g_strdup_printf("<b>%s</b>", _("Profile name:"));
   gtk_label_set_markup (GTK_LABEL (label), markup);
   g_free(markup);
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_widget_show (label);
   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
 
@@ -268,7 +268,7 @@ create_profiles_page1 (GtrAssistant * as)
   markup = g_strdup_printf("<b>%s</b>", ("Translator name:"));
   gtk_label_set_markup (GTK_LABEL (label), markup);
   g_free(markup);
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_widget_show (label);
   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
 
@@ -289,7 +289,7 @@ create_profiles_page1 (GtrAssistant * as)
   markup = g_strdup_printf("<b>%s</b>", _("Translator email:"));
   gtk_label_set_markup (GTK_LABEL (label), markup);
   g_free(markup);
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_widget_show (label);
   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
 

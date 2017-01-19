@@ -112,8 +112,7 @@ gtr_statusbar_init (GtrStatusbar * statusbar)
   gtk_label_set_single_line_mode (GTK_LABEL
                                   (statusbar->priv->overwrite_mode_label),
                                   TRUE);
-  gtk_misc_set_alignment (GTK_MISC (statusbar->priv->overwrite_mode_label),
-                          0.0, 0.5);
+  gtk_widget_set_halign (statusbar->priv->overwrite_mode_label, GTK_ALIGN_START);
   gtk_label_set_width_chars (GTK_LABEL
                              (statusbar->priv->overwrite_mode_label),
                              MAX (g_utf8_strlen (_("INS"), -1) + 1,

@@ -289,7 +289,7 @@ gtr_tab_label_init (GtrTabLabel *tab_label)
   tab_label->priv->icon = icon;
 
   label = gtk_label_new ("");
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_misc_set_padding (GTK_MISC (label), 0, 0);
   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
   tab_label->priv->label = label;

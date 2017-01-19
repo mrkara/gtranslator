@@ -815,7 +815,7 @@ gtr_tab_init (GtrTab * tab)
                                       markup);
   g_free(markup);
   gtk_misc_set_padding (GTK_MISC (priv->msgstr_label), 0, 5);
-  gtk_misc_set_alignment (GTK_MISC (priv->msgstr_label), 0, 0.5);
+  gtk_widget_set_halign (priv->msgstr_label, GTK_ALIGN_START);
   gtk_widget_show (priv->msgstr_label);
 
   priv->trans_notebook = gtk_notebook_new ();
