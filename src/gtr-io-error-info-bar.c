@@ -37,7 +37,7 @@ set_contents (GtkInfoBar * infobar, GtkWidget * contents)
  */
 static void
 set_info_bar_text_and_icon (GtkInfoBar * infobar,
-                            const gchar * icon_stock_id,
+                            const gchar *icon_name,
                             const gchar * primary_text,
                             const gchar * secondary_text)
 {
@@ -52,7 +52,7 @@ set_info_bar_text_and_icon (GtkInfoBar * infobar,
   hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
   gtk_widget_show (hbox_content);
 
-  image = gtk_image_new_from_stock (icon_stock_id, GTK_ICON_SIZE_DIALOG);
+  image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
   gtk_widget_show (image);
   gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
   gtk_widget_set_valign (image, GTK_ALIGN_START);
@@ -123,8 +123,9 @@ create_error_info_bar (const gchar * primary_text,
   gtk_info_bar_set_message_type (GTK_INFO_BAR (infobar), GTK_MESSAGE_WARNING);
 
   set_info_bar_text_and_icon (GTK_INFO_BAR (infobar),
-                              GTK_STOCK_DIALOG_ERROR,
-                              primary_text, secondary_text);
+                              "dialog-error",
+                              primary_text,
+                              secondary_text);
 
   g_signal_connect (G_OBJECT (infobar), "response",
                     G_CALLBACK (warning_message_button_clicked), NULL);
