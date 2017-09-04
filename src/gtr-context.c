@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2007  Ignacio Casal Quinteiro <icq@gnome.org>
+ * Copyright (C) 2017  Muhammet Kara <muhammetk@gmail.com>
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -200,12 +201,14 @@ static gboolean
 visibility_notify_event (GtkWidget *text_view, GdkEventVisibility *event,
                          GtrContextPanel *panel)
 {
-  GdkDeviceManager *device_manager;
+  GdkSeat *default_seat;
   GdkDevice *pointer;
   gint wx, wy, bx, by;
 
-  device_manager = gdk_display_get_device_manager (gtk_widget_get_display (text_view));
-  pointer = gdk_device_manager_get_client_pointer (device_manager);
+  default_seat = gdk_display_get_default_seat (gtk_widget_get_display (text_view));
+  pointer = gdk_seat_get_pointer (default_seat);
+
+
   gdk_window_get_device_position (gtk_widget_get_window (text_view), pointer, &wx, &wy, NULL);
 
   gtk_text_view_window_to_buffer_coords (GTK_TEXT_VIEW (text_view),
@@ -350,8 +353,10 @@ gtr_context_panel_init (GtrContextPanel *panel)
 
   priv->hovering_over_link = FALSE;
 
-  priv->hand_cursor = gdk_cursor_new (GDK_HAND2);
-  priv->regular_cursor = gdk_cursor_new (GDK_XTERM);
+  priv->hand_cursor = gdk_cursor_new_for_display (gtk_widget_get_display ((GtkWidget *) panel),
+						  GDK_HAND2);
+  priv->regular_cursor = gdk_cursor_new_for_display (gtk_widget_get_display ((GtkWidget *) panel),
+						     GDK_XTERM);
 
   gtk_orientable_set_orientation (GTK_ORIENTABLE (panel),
                                   GTK_ORIENTATION_VERTICAL);
