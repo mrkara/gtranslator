@@ -327,9 +327,7 @@ create_tree_popup_menu (GtrTranslationMemoryUi *self)
                     G_CALLBACK (popup_menu_translation_activate), self);
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
 
-  item = gtk_image_menu_item_new_with_mnemonic (_("_Remove"));
-  image = gtk_image_new_from_icon_name ("edit-delete", GTK_ICON_SIZE_MENU);
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
+  item = gtk_menu_item_new_with_mnemonic (_("_Remove"));
   g_signal_connect (item, "activate",
                     G_CALLBACK (popup_menu_remove_from_memory), self);
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
